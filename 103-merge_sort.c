@@ -15,7 +15,7 @@ void merge_sort(int *arr, size_t size)
 	int *copy;
 	size_t i;
 
-	if (arr == NULL || size <= 2)
+	if (arr == NULL || size < 2)
 		return;
 
 	copy = malloc(sizeof(int) * size);
