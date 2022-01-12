@@ -1,5 +1,6 @@
 #include "sort.h"
 
+size_t len(listint_t *list);
 void swap(listint_t **, listint_t **, listint_t **);
 /**
   * insertion_sort_list - uses insertion sort to sort a dll
@@ -9,6 +10,9 @@ void swap(listint_t **, listint_t **, listint_t **);
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *prev, *curr, *next;
+
+	if (list == NULL || *list == NULL || len(*list) <= 2)
+		return;
 
 	curr = (*list)->next;
 	while (curr)
@@ -54,4 +58,24 @@ void swap(listint_t **head, listint_t **first, listint_t **second)
 		*head = *second;
 		print_list(*head);
 	}
+}
+
+/**
+  * len - computes the length of a list
+  * @list: head of the list
+  * Return: the length
+  */
+size_t len(listint_t *list)
+{
+	size_t i;
+	listint_t *curr;
+
+	curr = list;
+	while (curr)
+	{
+		i += 1;
+		curr = curr->next;
+	}
+
+	return (i);
 }
