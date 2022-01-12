@@ -70,6 +70,7 @@ size_t len(listint_t *list)
 	size_t i;
 	listint_t *curr;
 
+	i = 0;
 	curr = list;
 	while (curr)
 	{
