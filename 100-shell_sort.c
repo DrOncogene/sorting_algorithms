@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 void insertion_sort(int *arr, size_t size);
 
@@ -22,7 +23,6 @@ void shell_sort(int *arr, size_t size)
 	while (gap > 1)
 	{
 		gap = (gap - 1) / 3;
-		print_array(arr, size);
 		if (gap <= 1)
 			break;
 
@@ -42,8 +42,10 @@ void shell_sort(int *arr, size_t size)
 				arr[j - gap] = temp;
 			}
 		}
+		print_array(arr, size);
 	}
 	insertion_sort(arr, size);
+	print_array(arr, size);
 }
 
 /**
